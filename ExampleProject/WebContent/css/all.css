@@ -1,0 +1,37 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.main {
+    margin: 5px auto;
+    position: absolute;
+    width: 70%;
+    left: 15%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.headline-div {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: azure;
+}
+
+
+.container {
+    width: 100%;
+    height: auto;
+}
