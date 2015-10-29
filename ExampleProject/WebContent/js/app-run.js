@@ -5,9 +5,9 @@ angular.module('example').run(function ($rootScope, $location, $cookieStore, $ht
     }
 
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        // redirect to login page if not logged in
+        var restrictedPage = ((next.indexOf("/login") + next.indexOf("/registration")) < -1);
         var loggedIn = $rootScope.globals.currentUser;
-        if (!loggedIn) {
+        if (restrictedPage && !loggedIn) {
             $location.path('/login');
         }
     });

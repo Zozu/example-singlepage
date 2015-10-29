@@ -31,7 +31,7 @@
         <div class="headline-div">
             <h2>Example project</h2>
         </div>
-        <p ng-show="!isAuthorized()" align="right">{{user.fullName + " "}}
+        <p ng-show="isLogged()" align="right">{{globals.currentUser.username}}
             <input type="button" value="LogOut" ng-click="logout()" />
         </p>
         <div ng-view class="container"></div>

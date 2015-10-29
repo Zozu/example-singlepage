@@ -1,15 +1,16 @@
-angular.module('example').controller('LoginController', function($scope, $location, AuthenticationService, FlashService){
-        $scope.login = login;
-
-        function login() {
-            AuthenticationService.Login($scope.username, $scope.password, function (response) {
-                if (response.success) {
-                    AuthenticationService.SetCredentials($scope.username, $scope.password);
-                    $location.path('/');
-                } else {
-                    FlashService.Error(response.message);
-                    $scope.dataLoading = false;
-                }
-            });
-        };
+angular.module('example').controller('LoginController', function ($scope, $location, AuthenticationService) {
+    $scope.user = {};
+    $scope.login = function () {
+        AuthenticationService.ClearCredentials();
+        AuthenticationService.Login($scope.user.username, $scope.user.password, function (response) {
+            //TODO
+            //TODO get id
+            /*if (response.success) {
+                AuthenticationService.SetCredentials($scope.username, $scope.password);
+                $location.path('/dataTable');
+            } else {
+                alert("can't login");
+            }*/
+        });
+    }
 });

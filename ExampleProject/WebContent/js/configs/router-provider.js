@@ -3,23 +3,23 @@ angular.module('example').config(['$routeProvider',
         $routeProvider.
         when('/', {
             templateUrl: 'tpl/login.html',
-            controllerAs: 'LoginController'
+            controller: 'LoginController'
         }).
         when('/login', {
             templateUrl: 'tpl/login.html',
-            controllerAs: 'LoginController'
+            controller: 'LoginController'
         }).
         when('/table', {
             templateUrl: 'tpl/dataTable.html',
-            controllerAs: 'TableController'
+            controller: 'TableController'
         }).
         when('/edit', {
             templateUrl: 'tpl/edit.html',
-            controllerAs: 'EditController'
+            controller: 'EditController'
         }).
         when('/registration', {
             templateUrl: 'tpl/registration.html',
-            controllerAs: 'RegistrationController'
+            controller: 'RegistrationController'
         }).
         otherwise({
             redirectTo: '/'
