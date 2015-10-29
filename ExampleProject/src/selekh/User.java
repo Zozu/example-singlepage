@@ -2,6 +2,11 @@ package selekh;
 
 public class User {
 	public String name;
+	public User(String name, String password, int iD) {
+		this.name = name;
+		this.password = password;
+		ID = iD;
+	}
 	public String password;
 	public int ID;
 	public String getName() {

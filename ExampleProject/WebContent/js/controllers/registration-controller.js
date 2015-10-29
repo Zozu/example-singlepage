@@ -7,7 +7,7 @@ angular.module('example').controller('RegistrationController', function ($scope,
             alert("different passwords");
             $scope.user = {}
         } else {
-            UserService.Create($scope.user)
+            UserService.Registrate($scope.user)
                 .then(function (response) {
                     if (response.success) {
                         $location.path('/login');
@@ -15,6 +15,7 @@ angular.module('example').controller('RegistrationController', function ($scope,
                         alert("can't register");
                     }
                 });
+
         }
     }
 });

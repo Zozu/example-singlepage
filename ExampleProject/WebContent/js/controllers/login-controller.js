@@ -3,13 +3,13 @@ angular.module('example').controller('LoginController', function ($scope, $locat
     $scope.login = function () {
         AuthenticationService.Login($scope.user.username, $scope.user.password, function (response) {
             //TODO
-            /*if (response.success) {
+            if (response.success) {
                 AuthenticationService.SetCredentials($scope.username, $scope.password);
-                $location.path('/dataTable');
+                $location.path('/table');
             } else {
                 alert("can't login");
-            }*/
+            }
         });
-        $location.path('/table');
+        //$location.path('/table');
     }
 });

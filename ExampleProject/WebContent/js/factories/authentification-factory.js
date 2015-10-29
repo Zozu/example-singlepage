@@ -11,14 +11,14 @@ angular.module('example')
 
         function Login(username, password, callback) {
             //TODO
-        /*$http.post('/ExampleServlet/authenticate', {
+            $http.post('/ExampleServlet/member', {
                     username: username,
                     password: password
                 })
                 .success(function (response) {
                     callback(response);
-                });*/
-            SetCredentials(username, password);
+                });
+            //SetCredentials(username, password);
         }
 
         function SetCredentials(username, password) {

@@ -7,10 +7,10 @@ angular.module('example').controller('EditController', function ($scope, $locati
     $scope.unit = UserService.GetById($scope.id_parameter);
     $scope.update= function(){
         UserService.Update($scope.unit);
-        $location.path("/dataTable");
+        $location.path("table");
     }
     $scope.delete = function(){
         UserService.Delete($scope.id_parameter);
-        $location.path("/dataTable");
+        $location.path("table");
     }
 });

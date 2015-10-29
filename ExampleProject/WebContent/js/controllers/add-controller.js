@@ -7,6 +7,6 @@ angular.module('example').controller('AddController', function ($scope, $locatio
     };
     $scope.add = function () {
         UserService.Create($scope.unit);
-        $location.path("/dataTable");
+        $location.path("table");
     }
 });

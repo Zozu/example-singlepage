@@ -35,3 +35,12 @@ h2 {
     width: 100%;
     height: auto;
 }
+
+.poiner{
+    cursor: default;
+    background-color: transparent;
+}
+.pointer:hover {
+    cursor: pointer;
+    background-color:azure;
+}
