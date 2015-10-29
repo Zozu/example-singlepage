@@ -1,1 +1,7 @@
-111
+<form action="">
+    ID:{{unit.id}}<br>
+    Username:<input type="text" ng-model="unit.username"/><br>
+    <input type="button" value="Save" ng-click="update(); add()"/><br>
+    <input type="button" ng-show="deleteShow" value="Delete" ng-click="delete()"/><br>
+    <a href="table">Back</a>
+</form>

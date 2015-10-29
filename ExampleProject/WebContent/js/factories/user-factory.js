@@ -12,14 +12,40 @@ angular
         $scope.Delete = Delete;
 
         return $scope;
-    //TODO
+        //TODO
+
 
         function GetAll() {
-            return $http.get('/ExampleServlet/users').then(handleSuccess, handleError('Error getting all users'));
+            //return $http.get('/ExampleServlet/users').then(handleSuccess, handleError('Error getting all users'));
+            var res = [{
+                id: "1",
+                username: "111"
+            }, {
+                id: "2",
+                username: "222"
+            }, {
+                id: "3",
+                username: "333"
+            }];
+            return res;
         }
 
         function GetById(id) {
-            return $http.get('/ExampleServlet/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            //return $http.get('/ExampleServlet/users/' + id).then(handleSuccess, handleError('Error getting user by id'));
+            var res = [{
+                id: "1",
+                username: "111"
+            }, {
+                id: "2",
+                username: "222"
+            }, {
+                id: "3",
+                username: "333"
+            }];
+            for (var i = 0; i < res.length; i++) {
+                if (res[i].id == id) return res[i];
+            }
+
         }
 
         function GetByUsername(username) {
@@ -27,15 +53,21 @@ angular
         }
 
         function Create(user) {
-            return $http.post('/ExampleServlet/users', user).then(handleSuccess, handleError('Error creating user'));
+            console.log("create: ");
+            console.log(user);
+            //return $http.post('/ExampleServlet/users', user).then(handleSuccess, handleError('Error creating user'));
         }
 
         function Update(user) {
-            return $http.put('/ExampleServlet/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
+            console.log("update: ");
+            console.log(user);
+            //return $http.put('/ExampleServlet/users/' + user.id, user).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            return $http.delete('/ExampleServlet/users/' + id).then(handleSuccess, handleError('Error deleting user'));
+            console.log("delete: ");
+            console.log(id);
+            //return $http.delete('/ExampleServlet/users/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
         // private functions

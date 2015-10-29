@@ -1,0 +1,17 @@
+<input type="button" value="Add new user" ng-click="addNew()" />
+<table>
+    <thead>
+        <td>
+            <p>ID:</p>
+        </td>
+        <td>
+            <p>Username:</p>
+        </td>
+    </thead>
+    <tbody>
+        <tr ng-repeat="unit in allUsers" ng-click="edit(unit)">
+            <td>{{unit.id}}</td>
+            <td>{{unit.username}}</td>
+        </tr>
+    </tbody>
+</table>

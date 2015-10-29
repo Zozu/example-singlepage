@@ -13,9 +13,13 @@ angular.module('example').config(['$routeProvider',
             templateUrl: 'tpl/dataTable.html',
             controller: 'TableController'
         }).
-        when('/edit', {
+        when('/edit/:userId', {
             templateUrl: 'tpl/edit.html',
             controller: 'EditController'
+        }).
+        when('/edit/new/:newId', {
+            templateUrl: 'tpl/edit.html',
+            controller: 'AddController'
         }).
         when('/registration', {
             templateUrl: 'tpl/registration.html',
