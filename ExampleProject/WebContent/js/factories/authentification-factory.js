@@ -10,15 +10,17 @@ angular.module('example')
         return $scope;
 
         function Login(username, password, callback) {
-            //TODO
-            $http.post('/ExampleServlet/member', {
-                    username: username,
-                    password: password
+            $http({
+                    method: "POST",
+                    url: UserService.BASE_URL + "/member",
+                    params: {
+                        username: username,
+                        password: password
+                    }
                 })
-                .success(function (response) {
+                .then(function (response) {
                     callback(response);
-                });
-            //SetCredentials(username, password);
+                }, function (response) {});
         }
 
         function SetCredentials(username, password) {

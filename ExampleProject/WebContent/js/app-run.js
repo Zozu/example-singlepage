@@ -8,7 +8,7 @@ angular.module('example').run(function ($rootScope, $location, $cookieStore, $ht
         var restrictedPage = ((next.indexOf("/login") + next.indexOf("/registration")) < -1);
         var loggedIn = $rootScope.globals.currentUser;
         if (restrictedPage && !loggedIn) {
-            $location.path('/login');
+            $location.path('login');
         }
     });
 });

@@ -5,8 +5,10 @@ angular.module('example').controller('AddController', function ($scope, $locatio
     $scope.unit = {
         id: $scope.new_id
     };
-    $scope.add = function () {
-        UserService.Create($scope.unit);
-        $location.path("table");
+    $scope.update = function () {
+        UserService.Create($scope.unit).then(function (status) {
+            if (status == "OK") $location.path("table");
+            else alert(status);
+        });
     }
 });

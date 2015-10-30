@@ -1,7 +1,7 @@
 'use strict';
 angular
     .module('example')
-    .factory('UserService', function ($http) {
+    .factory('UserService', function ($http, $q) {
         var $scope = {};
 
         $scope.GetAll = GetAll;
@@ -10,83 +10,69 @@ angular
         $scope.Update = Update;
         $scope.Delete = Delete;
         $scope.Registrate = Registrate;
-
+        $scope.BASE_URL = "project";
+        $scope.method = "POST";
         return $scope;
-        //TODO
-
 
         function GetAll() {
-            return $http.post('/ExampleServlet/users/all').then(handleSuccess, handleError('Error getting all users'));
-
-            /* var res = [{
-                 id: "1",
-                 username: "111"
-             }, {
-                 id: "2",
-                 username: "222"
-             }, {
-                 id: "3",
-                 username: "333"
-             }];
-             return res;*/
+            return $http({
+                method: $scope.method,
+                url: $scope.BASE_URL + "/users/all"
+            }).
+            then(handleSuccess, handleError('Error getting all users'));
         }
 
         function GetById(id) {
-            return $http.post('/ExampleServlet/user', {
-                id: id
+            return $http({
+                url: $scope.BASE_URL + "/user",
+                method: "POST",
+                params: {
+                    id: id
+                }
             }).then(handleSuccess, handleError('Error getting user by id'));
-            /*var res = [{
-                id: "1",
-                username: "111"
-            }, {
-                id: "2",
-                username: "222"
-            }, {
-                id: "3",
-                username: "333"
-            }];
-            for (var i = 0; i < res.length; i++) {
-                if (res[i].id == id) return res[i];
-            }*/
 
         }
 
-        /*
-                useless
-                function GetByUsername(username) {
-                    return $http.get('/ExampleServlet/users/' + username).then(handleSuccess, handleError('Error getting user by username'));
-                }*/
-
         function Create(user) {
-            console.log("create: ");
-            console.log(user);
-            return $http.post('/ExampleServlet/users/add', {
-                user: user
+            return $http({
+                url: $scope.BASE_URL + "/users/add",
+                method: "POST",
+                params: {
+                    id: user.id,
+                    username: user.username
+                }
             }).then(handleSuccess, handleError('Error creating user'));
         }
 
         function Update(user) {
-            console.log("update: ");
-            console.log(user);
-            return $http.post('/ExampleServlet/users/update', {
-                id: user.id,
-                user: user
+            return $http({
+                url: $scope.BASE_URL + "/users/update",
+                method: "POST",
+                params: {
+                    id: user.id,
+                    username: user.username
+                }
             }).then(handleSuccess, handleError('Error updating user'));
         }
 
         function Delete(id) {
-            console.log("delete: ");
-            console.log(id);
-            return $http.post('/ExampleServlet/users/delete', {
-                id: id
+            return $http({
+                url: $scope.BASE_URL + "/users/delete",
+                method: "POST",
+                params: {
+                    id: id
+                }
             }).then(handleSuccess, handleError('Error deleting user'));
         }
 
         function Registrate(user) {
-            console.log("registrate: ");
-            console.log(user);
-            return $http.post('/ExampleServlet/members/add', {
-                user: user
+            return $http({
+                url: $scope.BASE_URL + "/members/add",
+                method: "POST",
+                params: {
+                    username: user.username,
+                    password: user.password
+                }
             }).then(handleSuccess, handleError('Error creating user'));
         }
 

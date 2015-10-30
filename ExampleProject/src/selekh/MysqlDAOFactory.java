@@ -41,7 +41,7 @@ public class MysqlDAOFactory {
 	        System.out.println(e.getMessage());
 	    }
 	    try {
-	        dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ex_db?characterEncoding=utf8"
+	        dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ex_db"
 	        		, "root","");
 	        return dbConnection;
 	    } catch (SQLException e) {

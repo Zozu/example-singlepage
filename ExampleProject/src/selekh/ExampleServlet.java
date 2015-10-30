@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ExampleServlet")
 public class ExampleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public ExampleServlet()
+	  {
+	    super();
+	  }
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	//protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-	}
+	//}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
