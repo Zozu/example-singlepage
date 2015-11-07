@@ -1,0 +1,22 @@
+{
+  "name": "example-singlepage",
+  "version": "1.0.0",
+  "description": "readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://max.selekh@gmail.com:1998cvv1998cvv@github.com/Zozu/example-singlepage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zozu/example-singlepage/issues"
+  },
+  "homepage": "https://github.com/Zozu/example-singlepage#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
