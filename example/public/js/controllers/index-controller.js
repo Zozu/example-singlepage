@@ -7,6 +7,5 @@ angular.module('example').controller('IndexController', function ($scope, $rootS
     $scope.logout = function () {
         AuthenticationService.ClearCredentials();
         $location.path('login');
-        $route.reload();
     }
 });

@@ -2,15 +2,20 @@
 angular.module('example').controller('TableController', function ($scope, $location, UserService) {
 
     $scope.init = function () {
-       return UserService.GetAll().then(function (response) {
+        return UserService.GetAll().then(function (response) {
             $scope.allUsersQuery = response;
             $scope.allUsers = decode($scope.allUsersQuery);
             $scope.edit = function (unit) {
                 $location.path("/edit/" + unit.id);
             }
             $scope.addNew = function () {
-                var implement = parseInt($scope.allUsers[$scope.allUsers.length - 1].id) + 1;
-                $location.path("/edit/new/" + implement);
+                if ($scope.allUsers.length && $scope.allUsers.length > 0) {
+                    var implement = parseInt($scope.allUsers[$scope.allUsers.length - 1].id) + 1;
+                    $location.path("/edit/new/" + implement);
+                }
+                else {
+                    $location.path("/edit/new/" + 1);
+                }
             }
             return response;
         });
