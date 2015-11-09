@@ -1,0 +1,45 @@
+<html ng-app="example">
+
+<head>
+   <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <meta charset="UTF-8">
+    <title>Example project - Max Selekh</title>
+    <link rel="stylesheet" href="css/all.css">
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/configs/router-provider.js"></script>
+    <script type="text/javascript" src="js/configs/location-provider.js"></script>
+
+    <script type="text/javascript" src="js/app-run.js"></script>
+
+    <script type="text/javascript" src="js/factories/user-factory.js"></script>
+    <script type="text/javascript" src="js/factories/authentification-factory.js"></script>
+
+    <script type="text/javascript" src="js/controllers/index-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/login-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/registration-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/table-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/edit-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/add-controller.js"></script>
+</head>
+
+<body ng-controller="IndexController">
+    <div class="main">
+        <div class="headline-div">
+            <h2>Example project</h2>
+        </div>
+        <p ng-show="isLogged()" align="right">{{globals.currentUser.username}}
+            <input type="button" value="LogOut" ng-click="logout()" />
+        </p>
+        <div ng-view class="container"></div>
+    </div>
+
+</body>
+
+</html>
