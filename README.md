@@ -11,3 +11,8 @@ Now you can run project on server by typing this in console:
 ```
 set DEBUG=example && node ./bin/www
 ```
+And in your web-browser:
+
+```
+http://http://localhost:3000/
+```
