@@ -11,13 +11,12 @@ import javax.sql.DataSource;
 
 public class MysqlDAOFactory {
 
-
 	private static DataSource getDataSource()  {
 		DataSource dataSource = null;
 		try {
 			InitialContext initContext = new InitialContext();
 			dataSource = (DataSource) initContext
-					.lookup("java:/comp/env/jdbc/ex_db");
+					.lookup("java:/comp/env/jdbc/java_lab2");
 		} catch (NamingException e) {
 			System.out.println(e.getMessage());
 		}
@@ -41,7 +40,7 @@ public class MysqlDAOFactory {
 	        System.out.println(e.getMessage());
 	    }
 	    try {
-	        dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ex_db"
+	        dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_lab2"
 	        		, "root","");
 	        return dbConnection;
 	    } catch (SQLException e) {
